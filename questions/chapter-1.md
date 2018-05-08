@@ -46,3 +46,8 @@
 
 * A contingency table helps us see the number of records of a dataset with a given combination of two categorical variables ((spam, has number), (spam, has no number), (no spam, has number), (no span, has no number)). Adding a color to the number of records, where the intensity of the color is tied to the magnitude (effectively a heatmap) can help even more!
 * A similar table for only one categorical variable is called a frequency table.
+* A segmented bar plot is a graphical display of contingency table information. The height of the bars are equal to the total number (or proportion of) cases in a given category, split by some dimension (half spam, half not spam).
+* If your goal is to compare the proportion of values in each category with a given property (e.g. spam / not spam), you can standardize the bars to the same height (with a total value of 100%), visualizing the proportion of each category with the target property.
+* Sometimes you just have to visualize both standardized and non-standardized bar plots to see which one best communicates the story you want to tell.
+* "It is generally more difficult to compare group sizes in a pie chart than in a bar plot, especially when categories have nearly identical counts or proportions".
+* Comparing numerical data across groups: side by side box plots and hollow histograms!
