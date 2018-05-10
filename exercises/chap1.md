@@ -68,3 +68,39 @@ We can visualize the distribution of height by gender using a nice boxplot:
 We can compare the exercise status of respondents with their BMI:
 
     ggplot(cdct, aes(as.factor(exerany), bmi)) + geom_boxplot() + coord_flip()
+
+### Exercise 5
+
+Let's make a histogram of age:
+
+    ggplot(cdct, aes(age)) + geom_histogram(binwidth=10)
+
+You can flip between different plots by clicking the left and right arrows in the top-right corner of our plot window in RStudio!
+
+### On your own
+
+_Make a scatterplot of weight versus desired weight. Describe the relationship between these two variables._
+
+This is a pretty interesting scatter plot of weight vs desired weight:
+
+    ggplot(cdct, aes(weight, wtdesire, color=gender)) + geom_point()
+
+In general, people's weight is higher than their desired weight, but we can be more precise about this (see below).
+
+_Let’s consider a new variable: the difference between desired weight (wtdesire) and current weight (weight). Create this new variable by subtracting the two columns in the data frame and assigning them to a new object called wdiff._
+
+    wtdiff <- cdct$weight - cdct$wtdesire
+
+_Describe the distribution of wdiff in terms of its center, shape, and spread, including any plots you use. What does this tell us about how people feel about their current weight?_
+
+* The distribution is unimodal, with a slight left skew. The `IQR` is 21, spanning from 0 to 21, suggesting that most people are between the weight they desire and 20 pounds above it. The average person (here we use the median to describe the average given the skew and extreme outliers) weighs 10 lbs more than they want.
+
+_Using numerical summaries and a side-by-side box plot, determine if men tend to view their weight differently than women._
+
+Yes, women have a higher positive difference between their weight and desired weight. We can compare this using the following boxplot:
+
+     ggplot(subset(cdct, cdct$weight - cdct$wtdesire > -200), aes(gender, weight - wtdesire)) + geom_boxplot()
+
+_Now it’s time to get creative. Find the mean and standard deviation of weight and determine what proportion of the weights are within one standard deviation of the mean._
+
+    subset(cdct, mean(cdct$weight) - sd(cdct$weight) < cdct$weight & cdct$weight > mean(cdct$weight) + sd(cdct$weight))
