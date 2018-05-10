@@ -1,5 +1,5 @@
-[Link to Lab](http://htmlpreview.github.io/?https://github.com/andrewpbray/oiLabs-base-R/blob/master/intro_to_data/intro_to_data.html)
-[Link to data](https://www.cdc.gov/brfss/)
+* [Link to Lab](http://htmlpreview.github.io/?https://github.com/andrewpbray/oiLabs-base-R/blob/master/intro_to_data/intro_to_data.html)
+* [Link to data](https://www.cdc.gov/brfss/)
 
 First, I converted the CDC BRFSS data into a tibble like so:
 
